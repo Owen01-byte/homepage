@@ -1,0 +1,366 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  list-style: none;
+  text-decoration: none;
+}
+body{
+  height: 1000px;
+  display: flex;
+  justify-content: center;
+  background-color: white;
+}
+.home-page{
+  width: 1300px;
+  height: 600px;
+  background-color: transparent;  
+  margin-top: 30px;
+  display:flex;
+  justify-content: center;
+  border-radius: 25px;
+}.logo-container{
+  width: 280px;
+  height: 65px;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  justify-self: center;
+  border: transparent;
+  border-bottom-left-radius: 35px;
+  border-bottom-right-radius: 35px;
+  position: absolute;
+  z-index: 1000;
+  opacity: 0;
+  transform: translateY(-30px);
+  animation: slideDownLogo 0.9s ease-out forwards;
+  animation-delay: 0.3s;
+  
+}
+
+
+@keyframes slideDownLogo {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.logo{
+  width: 100%;
+  height: 100%;
+}
+.background-image-container{
+  width: 100%;
+  height: 100%;
+  
+}
+.background-image{
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+}
+.nav-bar{
+  width: 1300px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+}
+.nav-bar-left, .nav-bar-right{
+  width: 40%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.list{
+  width: 120px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+  margin: 0 10px;
+}
+
+.nav-links {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  color: #000;
+  padding-bottom: 2px;
+}
+
+.nav-links::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #000000;
+  transition: width 0.3s ease;
+}
+
+.nav-links:hover::after {
+  width: 100%;
+}
+a{
+  color: black;
+  font-family: 'Inter', sans-serif; 
+  font-size: 15px;
+  font-weight: 500;
+}
+.text-container{
+  width: 800px;
+  height: 450px;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.text-one,
+.text-two,
+.btn {
+  opacity: 0;
+  
+}
+.text-one{
+  font-size: 50px;
+  font-family: 'Playfair Display', serif;
+  color: rgb(0, 0, 0);
+  font-weight: 700;
+  margin-bottom: 20px;
+  animation: textSlideUp 1s ease-out forwards;
+  animation-delay: 0.3s;
+ 
+}
+
+.text-two{
+  font-size: 30px;
+  font-family: 'Segoe UI', sans-serif;
+  color: rgb(0, 0, 0);
+  font-weight: 500;
+  margin-bottom: 25px;
+  margin-top:0;
+  animation: textSlideUp 1s ease-out forwards;
+  animation-delay: 0.6s;
+}
+.btn{
+  width: 200px;
+  height: 50px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  animation: buttonBounceIn 1s cubic-bezier(0.68, -0.55, 0.27, 1) forwards;
+  animation-delay: 1s;
+}
+button{
+  width: 100%;
+  height: 100%;
+  padding: 1.3em 3em;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: bold;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+
+button:hover {
+  background-color: #00d600;
+  box-shadow: 0px 15px 20px #86df86;
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+button:active {
+  transform: translateY(-1px);
+}
+@keyframes textSlideUp {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+@keyframes buttonBounceIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  80% {
+    transform: scale(0.97);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+}
+@media screen and (max-width: 1300px){
+  .home-page{
+    width: 100%;
+    height: 100vh;
+  }
+  .nav-bar{
+    width: 100%;
+  }
+  .text-container{
+    width: 90%;
+    height: 80%;
+  }
+}
+
+
+
+
+.nav-bar-left,
+.nav-bar-right {
+  opacity: 0;
+  transform: translateX(-30px);
+  animation: slideInLeft 0.9s ease-out forwards;
+}
+
+.nav-bar-right {
+  transform: translateX(30px);
+  animation: slideInRight 0.9s ease-out forwards;
+  animation-delay: 0.2s;
+}
+
+@keyframes slideInLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  position: absolute;
+  top: 40px;
+  right: 20px;
+  z-index: 1001;
+}
+.hamburger span {
+  height: 3px;
+  width: 25px;
+  background: #ffffff;
+  margin: 4px 0;
+  border-radius: 2px;
+}
+
+
+@media screen and (max-width: 768px) {
+  .nav-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    
+  }
+
+  .nav-bar-left,
+  .nav-bar-right {
+    flex-direction: column;
+    width: 100%;
+    display: none;
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .nav-bar-left.active,
+  .nav-bar-right.active {
+    display: flex;
+  }
+
+  .list {
+    margin: 10px 0;
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .text-one {
+    font-size: 30px;
+    text-align: center;
+  }
+
+  .text-two {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .btn {
+    width: 80%;
+  }
+
+  .text-container {
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+  .logo-container{
+    width: 52%;
+    height: 65px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    justify-self: center;
+    border: transparent;
+    border-bottom-left-radius: 35px;
+    border-bottom-right-radius: 35px;
+    position: absolute;
+    z-index: 1000;
+    opacity: 0;
+    transform: translateY(-30px);
+    animation: slideDownLogo 0.9s ease-out forwards;
+    animation-delay: 0.3s; 
+  }
+}
